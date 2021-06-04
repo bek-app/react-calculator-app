@@ -1,14 +1,10 @@
+import React, { Component } from "react";
+import "./ClearButton.css";
 
-import React, { useContext } from 'react';
-import { NumberContext } from './NumberProvider';
-
-const ClearButton = () => {
-  const { handleClearValue } = useContext(NumberContext);
-  return (
-    <button type="button" className="white-button" onClick={() => handleClearValue()}>
-      C
-    </button>
-  );
-};
+class ClearButton extends Component {
+    render() {
+        return <div className="clr-btn"> Clear</div>;
+    }
+}
 
 export default ClearButton;
