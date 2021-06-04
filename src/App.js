@@ -22,6 +22,14 @@ class App extends Component {
             this.setState({ input: this.state.input + val });
         }
     };
+    addDecimal = (val) => {
+        if (this.state.input.indexOf(".") === -1) {
+            this.setState({ input: this.state.input + val });
+        }
+    };
+    clearInput = (val) => {
+        this.setState({ input: "" });
+    };
     render() {
         return (
             <div className="App">
@@ -33,7 +41,7 @@ class App extends Component {
                         <Button handleClick={this.addToInput}>7</Button>
                         <Button handleClick={this.addToInput}>8</Button>
                         <Button handleClick={this.addToInput}>9</Button>
-                        <Button>/</Button>
+                        <Button handleClick>/</Button>
                     </div>
                     <div className="row">
                         <Button handleClick={this.addToInput}>4</Button>
@@ -45,16 +53,18 @@ class App extends Component {
                         <Button handleClick={this.addToInput}>1</Button>
                         <Button handleClick={this.addToInput}>2</Button>
                         <Button handleClick={this.addToInput}>3</Button>
-                        <Button>+</Button>
+                        <Button handleClick={this.addToInput}>+</Button>
                     </div>
                     <div className="row">
-                        <Button>.</Button>
+                        <Button handleClick={this.addDecimal}>.</Button>
                         <Button handleClick={this.addZeroToInput}>0</Button>
-                        <Button>=</Button>
-                        <Button>-</Button>
+                        <Button handleClick={this.addDecimal}>=</Button>
+                        <Button handleClick={this.addToInput}>-</Button>
                     </div>
                     <div className="row">
-                        <ClearButton></ClearButton>
+                        <ClearButton
+                            handleClear={this.clearInput}
+                        ></ClearButton>
                     </div>
                 </div>
             </div>
