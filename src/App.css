@@ -1,11 +1,11 @@
-.App {
+.app {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
 }
-.wrapper {
+.calc-wrapper {
     margin-top: 100px;
     width: 400px;
     height: 600px;
